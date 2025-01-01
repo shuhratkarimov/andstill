@@ -3,7 +3,7 @@ const fs = require("fs");
 const dotenv = require("dotenv");
 dotenv.config();
 const { read_File, write_File } = require("./devTools.js");
-const PORT = process.env.PORT || 4001;
+const port = process.env.PORT || 10000; // Render.com avtomatik PORTni ishlatadi
 
 /////////////////////////////////////////////////////////////animal
 const app = http.createServer((req, res) => {
@@ -33,9 +33,10 @@ const app = http.createServer((req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log("server is running on http://localhost:" + PORT);
+app.listen(port, '0.0.0.0', () => { // 0.0.0.0 bilan ishlash
+    console.log(`Server is running on port ${port}`);
 });
+
 
 //////////////////////////////////////////// fruit
 
